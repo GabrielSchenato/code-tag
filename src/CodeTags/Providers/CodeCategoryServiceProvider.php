@@ -1,6 +1,6 @@
 <?php
 
-namespace CodePress\CodeCategory\Providers;
+namespace CodePress\CodeTags\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -9,7 +9,7 @@ use Illuminate\Support\ServiceProvider;
  *
  * @author gabriel
  */
-class CodeCategoryServiceProvider extends ServiceProvider
+class CodeTagsServiceProvider extends ServiceProvider
 {
 
     public function boot()
