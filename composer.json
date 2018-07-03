@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "CodePress\\CodeTags\\": "src/CodeTags/"
+            "CodePress\\CodeTag\\": "src/CodeTag/"
         }
     }
 }

@@ -1,9 +1,9 @@
 <?php
 
-namespace CodePress\CodeCategory\Tests\Models;
+namespace CodePress\CodeTag\Tests\Models;
 
-use CodePress\CodeTags\Models\Tag;
-use CodePress\CodeTags\Tests\AbstractTestCase;
+use CodePress\CodeTag\Models\Tag;
+use CodePress\CodeTag\Tests\AbstractTestCase;
 
 /**
  * Description of CategoryTest
