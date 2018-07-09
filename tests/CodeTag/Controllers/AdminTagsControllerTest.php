@@ -2,7 +2,7 @@
 
 namespace CodePress\CodeTag\Tests\Models;
 
-use CodePress\CodeTag\Models\Tag;
+use CodePress\CodeTag\Repository\TagRepository;
 use CodePress\CodeTag\Tests\AbstractTestCase;
 use CodePress\CodeTag\Controllers\AdminTagsController;
 use CodePress\CodeTag\Controllers\Controller;
@@ -19,25 +19,25 @@ class AdminTagsControllerTest extends AbstractTestCase
 
     public function test_should_extend_from_controller()
     {
-        $tag = m::mock(Tag::class);
+        $repository = m::mock(TagRepository::class);
         $responseFactory = m::mock(ResponseFactory::class);
-        $controller = new AdminTagsController($responseFactory, $tag);
+        $controller = new AdminTagsController($responseFactory, $repository);
 
         $this->assertInstanceOf(Controller::class, $controller);
     }
     
     public function test_controller_should_run_index_method_and_return_correct_arguments()
     {
-        $tag = m::mock(Tag::class);
+        $repository = m::mock(TagRepository::class);
         $responseFactory = m::mock(ResponseFactory::class);
-        $controller = new AdminTagsController($responseFactory, $tag);
+        $controller = new AdminTagsController($responseFactory, $repository);
         $html = m::mock();
         
-        $tagsResult = ['tag1', 'tag2'];
-        $tag->shouldReceive('all')->andReturn($tagsResult);
+        $repositorysResult = ['tag1', 'tag2'];
+        $repository->shouldReceive('all')->andReturn($repositorysResult);
         
         $responseFactory->shouldReceive('view')
-                ->with('codetag::index', ['tags' => $tagsResult])
+                ->with('codetag::index', ['tags' => $repositorysResult])
                 ->andReturn($html);
 
         $this->assertEquals($controller->index(), $html);
@@ -45,17 +45,17 @@ class AdminTagsControllerTest extends AbstractTestCase
     
     public function test_controller_should_run_show_method_and_return_correct_argument()
     {
-        $tag = m::mock(Tag::class);
+        $repository = m::mock(TagRepository::class);
         $responseFactory = m::mock(ResponseFactory::class);
-        $controller = new AdminTagsController($responseFactory, $tag);
+        $controller = new AdminTagsController($responseFactory, $repository);
         $html = m::mock();
         
-        $tagResult = ['cat1'];
+        $repositoryResult = ['cat1'];
         
-        $tag->shouldReceive('find')->with(1)->andReturn($tagResult);
+        $repository->shouldReceive('find')->with(1)->andReturn($repositoryResult);
         
         $responseFactory->shouldReceive('view')
-                ->with('codetag::show', ['tag' => $tagResult])
+                ->with('codetag::show', ['tag' => $repositoryResult])
                 ->andReturn($html);
 
         $this->assertEquals($controller->show(1), $html);
