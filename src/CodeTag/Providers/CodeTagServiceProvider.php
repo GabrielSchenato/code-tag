@@ -5,7 +5,7 @@ namespace CodePress\CodeTag\Providers;
 use Illuminate\Support\ServiceProvider;
 
 /**
- * Description of CodeCategoryServiceProvider
+ * Description of CodeTagServiceProvider
  *
  * @author gabriel
  */
