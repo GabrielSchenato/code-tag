@@ -15,6 +15,14 @@ abstract class AbstractTestCase extends TestCase
     public function migrate()
     {
         $this->loadMigrationsFrom(__DIR__ . '/../src/resources/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../../codeposts/src/resources/migrations');
+    }
+
+    public function getPackageProviders($app)
+    {
+        return [
+            \Cviebrock\EloquentSluggable\ServiceProvider::class
+        ];
     }
 
     /**

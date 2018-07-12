@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Validation\Validator;
 
 /**
- * Description of Category
+ * Description of Tag
  *
  * @author gabriel
  */
@@ -42,10 +42,9 @@ class Tag extends Model
 
         return true;
     }
-
-    public function taggable()
+    
+    public function posts()
     {
-        return $this->morphTo();
+        return $this->morphedByMany('CodePress\CodePosts\Models\Post', 'taggable', 'codepress_taggables');
     }
-
 }

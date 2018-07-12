@@ -6,11 +6,11 @@ use CodePress\CodeDatabase\AbstractRepository;
 use CodePress\CodeTag\Models\Tag;
 
 /**
- * Description of TagRepository
+ * Description of TagRepositoryEloquent
  *
  * @author gabriel
  */
-class TagRepository extends AbstractRepository
+class TagRepositoryEloquent extends AbstractRepository implements TagRepositoryInterface
 {
 
     public function model()

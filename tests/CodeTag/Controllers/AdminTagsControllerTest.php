@@ -2,7 +2,7 @@
 
 namespace CodePress\CodeTag\Tests\Models;
 
-use CodePress\CodeTag\Repository\TagRepository;
+use CodePress\CodeTag\Repository\TagRepositoryEloquent;
 use CodePress\CodeTag\Tests\AbstractTestCase;
 use CodePress\CodeTag\Controllers\AdminTagsController;
 use CodePress\CodeTag\Controllers\Controller;
@@ -19,7 +19,7 @@ class AdminTagsControllerTest extends AbstractTestCase
 
     public function test_should_extend_from_controller()
     {
-        $repository = m::mock(TagRepository::class);
+        $repository = m::mock(TagRepositoryEloquent::class);
         $responseFactory = m::mock(ResponseFactory::class);
         $controller = new AdminTagsController($responseFactory, $repository);
 
@@ -28,7 +28,7 @@ class AdminTagsControllerTest extends AbstractTestCase
     
     public function test_controller_should_run_index_method_and_return_correct_arguments()
     {
-        $repository = m::mock(TagRepository::class);
+        $repository = m::mock(TagRepositoryEloquent::class);
         $responseFactory = m::mock(ResponseFactory::class);
         $controller = new AdminTagsController($responseFactory, $repository);
         $html = m::mock();
@@ -45,7 +45,7 @@ class AdminTagsControllerTest extends AbstractTestCase
     
     public function test_controller_should_run_show_method_and_return_correct_argument()
     {
-        $repository = m::mock(TagRepository::class);
+        $repository = m::mock(TagRepositoryEloquent::class);
         $responseFactory = m::mock(ResponseFactory::class);
         $controller = new AdminTagsController($responseFactory, $repository);
         $html = m::mock();
