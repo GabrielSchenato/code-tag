@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0117105140d93f61a413f59631dd1b1f",
+    "content-hash": "dbb071260c668feaab609d1c16d1f53a",
     "packages": [
         {
             "name": "cocur/slugify",
@@ -1374,55 +1374,6 @@
                 "uuid"
             ],
             "time": "2018-01-20T00:28:24+00:00"
-        },
-        {
-            "name": "schenato/code-database",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/schenato/code-database.git",
-                "reference": "72e3d74fe1a63568ddac842c7553b360ba3e67d7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/schenato/code-database/zipball/72e3d74fe1a63568ddac842c7553b360ba3e67d7",
-                "reference": "72e3d74fe1a63568ddac842c7553b360ba3e67d7",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/dbal": "^2.7",
-                "illuminate/database": "^5.6",
-                "php": ">=7.1"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.1",
-                "orchestra/testbench": "~3.6",
-                "phpunit/phpunit": "^7.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "CodePress\\CodeDatabase\\": "src/CodeDatabase/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Gabriel Schenato",
-                    "email": "gabriel.schenato@inovadora.com.br"
-                }
-            ],
-            "description": "Schenato.me repository pattern library based in Laravel",
-            "homepage": "https://github.com/schenato",
-            "keywords": [
-                "criteria",
-                "laravel",
-                "repository"
-            ],
-            "time": "2018-07-12T17:13:22+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -4025,9 +3976,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "schenato/code-database": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
