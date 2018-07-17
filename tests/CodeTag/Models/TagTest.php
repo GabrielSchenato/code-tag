@@ -101,4 +101,50 @@ class TagTest extends AbstractTestCase
         $this->assertEquals('meu post 2', $posts[1]->title);
     }
 
+    public function test_can_soft_delete()
+    {
+        $tag = Tag::create(['name' => 'Tag Test']);
+        $tag->delete();
+        $this->assertTrue($tag->trashed());
+        $this->assertCount(0, Post::all());
+    }
+    
+    public function test_can_get_rows_deleted()
+    {
+        $tag = Tag::create(['name' => 'Tag Test']);
+        Tag::create(['name' => 'Tag Test 2']);
+        $tag->delete();
+        $tags = Tag::onlyTrashed()->get();
+        $this->assertEquals(1, $tags[0]->id);
+        $this->assertEquals('Tag Test', $tags[0]->name);
+    }
+    
+    public function test_can_get_rows_deleted_and_activated()
+    {
+        $tag = Tag::create(['name' => 'Tag Test']);
+        Tag::create(['name' => 'Tag Test 2']);
+        $tag->delete();
+        $tags = Tag::withTrashed()->get();
+        $this->assertCount(2, $tags);
+        $this->assertEquals(1, $tags[0]->id);
+        $this->assertEquals('Tag Test', $tags[0]->name);
+    }
+    
+    public function test_can_force_delete()
+    {
+        $tag = Tag::create(['name' => 'Tag Test']);
+        $tag->forceDelete();
+        $this->assertCount(0, Tag::all());
+    }
+    
+    public function test_can_restore_rows_from_deleted()
+    {
+        $tag = Tag::create(['name' => 'Tag Test']);
+        $tag->delete();
+        $tag->restore();
+        $tag = Tag::find(1);
+        $this->assertEquals(1, $tag->id);
+        $this->assertEquals('Tag Test', $tag->name);
+    }
+    
 }

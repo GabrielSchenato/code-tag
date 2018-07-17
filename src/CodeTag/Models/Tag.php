@@ -4,6 +4,7 @@ namespace CodePress\CodeTag\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Description of Tag
@@ -12,8 +13,10 @@ use Illuminate\Contracts\Validation\Validator;
  */
 class Tag extends Model
 {
-
+    use SoftDeletes;
+    
     protected $table = "codepress_tags";
+    protected $dates = ['deleted_at'];
     protected $fillable = [
         'name'
     ];

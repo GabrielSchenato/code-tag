@@ -65,4 +65,16 @@ class AdminTagsController extends Controller
         $this->repository->find($id)->delete();
         return redirect()->route('admin.tags.index');
     }
+    
+    public function deleted()
+    {
+        $tags = $this->repository->deleted();
+        return $this->response->view('codetag::deleted', compact('tags'));
+    }
+    
+    public function restore(int $id)
+    {
+        $this->repository->restore($id);
+        return redirect()->route('admin.tags.index');
+    }
 }

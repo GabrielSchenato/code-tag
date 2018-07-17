@@ -12,15 +12,11 @@
                         {{ session('status') }}
                     </div>
                     @endif
-
-
-                    <a href="{{ route('admin.tags.create') }}" class="btn btn-primary">Create Tag</a>
-                    <a href="{{ route('admin.tags.deleted') }}" class="btn btn-dark btn-sm">Deleted Tags</a>
                     <br>
                     <br>
                     <hr>
 
-                    <h4>Tags</h4>
+                    <h4>Deleted Tags</h4>
 
 
                     <table class="table">
@@ -37,10 +33,7 @@
                                 <td>{{ $tag->id }}</td>
                                 <td>{{ $tag->name }}</td>
                                 <td>
-                                    <a href="{{ route('admin.tags.edit', $tag->id) }}" class="btn btn-outline-primary">Edit tag</a>
-                                    {!! Form::model($tag, ['route' => ['admin.tags.destroy', $tag->id], 'method' => 'delete', 'style' => 'display: inline;']) !!}
-                                        {!! Form::submit('Delete tag', ['class' => 'btn btn-outline-danger']) !!}
-                                    {!! Form::close() !!}
+                                    <a href="{{ route('admin.tags.restore', $tag->id) }}" class="btn btn-outline-warning">Restore tag</a>
                                 </td>
                             </tr>
                             @endforeach
