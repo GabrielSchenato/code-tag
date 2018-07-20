@@ -2,7 +2,7 @@
 
 Route::name('admin.')
         ->prefix('admin/')
-        ->middleware('web', 'auth')
+        ->middleware('web', 'auth', 'authorization:access_tags')
         ->namespace('CodePress\CodeTag\Controllers')
         ->group(function () {
             Route::get('tags/deleted', 'AdminTagsController@deleted')->name('tags.deleted');
