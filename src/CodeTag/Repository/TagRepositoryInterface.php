@@ -12,4 +12,5 @@ use CodePress\CodeDatabase\Contracts\CriteriaCollectionInterface;
  */
 interface TagRepositoryInterface extends RepositoryInterface, CriteriaCollectionInterface
 {
+    public function getTagsAndCount(string $model);
 }

@@ -17,5 +17,9 @@ class TagRepositoryEloquent extends AbstractRepository implements TagRepositoryI
     {
         return Tag::class;
     }
-
+    
+    public function getTagsAndCount(string $model)
+    {
+        return $this->model->withCount($model)->get();
+    }    
 }
