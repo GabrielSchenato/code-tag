@@ -24,11 +24,12 @@
         "mockery/mockery": "^1.1",
         "cviebrock/eloquent-sluggable": "^4.5",
         "doctrine/dbal": "^2.7",
-        "schenato/code-database": "dev-master"
+        "schenato/code-database": "^0.0.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.2",
-        "orchestra/testbench": "~3.6"
+        "orchestra/testbench": "~3.6",
+        "schenato/code-posts": "^0.0.1"
     },
     "autoload": {
         "psr-4": {

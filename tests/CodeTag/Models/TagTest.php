@@ -85,8 +85,8 @@ class TagTest extends AbstractTestCase
     public function test_can_add_posts_to_tags()
     {
         $tag = Tag::create(['name' => 'Tag Test']);
-        $post1 = Post::create(['title' => 'meu post 1', 'content' => 'meu conteudo 1']);
-        $post2 = Post::create(['title' => 'meu post 2', 'content' => 'meu conteudo 2']);
+        $post1 = Post::create(['title' => 'meu post 1', 'image' => '123456', 'content' => 'meu conteudo 1']);
+        $post2 = Post::create(['title' => 'meu post 2', 'image' => '123456', 'content' => 'meu conteudo 2']);
         
         $post1->tags()->save($tag);
         $post2->tags()->save($tag);
