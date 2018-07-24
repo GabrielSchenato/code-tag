@@ -2,7 +2,7 @@
 
 namespace CodePress\CodeTag\Tests\Models;
 
-use CodePress\CodePosts\Models\Post;
+use CodePress\CodeTag\Models\Post;
 use CodePress\CodeTag\Models\Tag;
 use CodePress\CodeTag\Tests\AbstractTestCase;
 use Illuminate\Validation\Validator;
